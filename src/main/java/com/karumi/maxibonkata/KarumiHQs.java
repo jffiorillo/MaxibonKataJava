@@ -16,12 +16,15 @@
 
 package com.karumi.maxibonkata;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import java.util.Collections;
 import java.util.List;
 
 public class KarumiHQs {
 
   private final Chat chat;
+  public static final int PACKAGE_OF_MAXIBONS = 10;
 
   private int maxibonsLeft;
 
@@ -31,7 +34,7 @@ public class KarumiHQs {
 
   public KarumiHQs(Chat chat) {
     this.chat = chat;
-    this.maxibonsLeft = 10;
+    this.maxibonsLeft = PACKAGE_OF_MAXIBONS;
   }
 
   public void openFridge(Developer developer) {
@@ -64,7 +67,7 @@ public class KarumiHQs {
   }
 
   private void buyMaxibons() {
-    maxibonsLeft += 10;
+    maxibonsLeft += PACKAGE_OF_MAXIBONS;
   }
 
   public int getMaxibonsLeft() {

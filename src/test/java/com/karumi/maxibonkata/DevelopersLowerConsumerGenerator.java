@@ -21,17 +21,15 @@ import com.pholser.junit.quickcheck.generator.Generator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
 import org.apache.commons.lang3.RandomStringUtils;
 
-import static com.karumi.maxibonkata.KarumiHQs.PACKAGE_OF_MAXIBONS;
+public class DevelopersLowerConsumerGenerator extends Generator<Developer> {
 
-public class HungryDevelopersGenerator extends Generator<Developer> {
-
-  public HungryDevelopersGenerator() {
+  public DevelopersLowerConsumerGenerator() {
     super(Developer.class);
   }
 
   @Override public Developer generate(SourceOfRandomness random, GenerationStatus status) {
     String name = RandomStringUtils.randomAlphabetic(random.nextInt(16));
-    int numberOfMaxibons = random.nextInt(8, PACKAGE_OF_MAXIBONS);
+    int numberOfMaxibons = random.nextInt(0, 8);
     return new Developer(name, numberOfMaxibons);
   }
 }
